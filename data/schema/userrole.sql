@@ -1,0 +1,8 @@
+CREATE TABLE `userrole` (
+  `UserId` int(11) NOT NULL,
+  `RoleId` int(11) NOT NULL,
+  PRIMARY KEY (`UserId`,`RoleId`),
+  KEY `FK_UserRole_Role_idx` (`RoleId`),
+  CONSTRAINT `FK_UserRole_Role` FOREIGN KEY (`RoleId`) REFERENCES `role` (`RoleId`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_UserRole_User` FOREIGN KEY (`UserId`) REFERENCES `user` (`UserId`) ON DELETE CASCADE ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8

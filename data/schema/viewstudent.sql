@@ -1,0 +1,1 @@
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `viewstudent` AS select `s`.`StudentId` AS `StudentId`,`p`.`Firstname` AS `FirstName`,`p`.`Lastname` AS `LastName` from (`student` `s` join `person` `p` on((`p`.`PersonId` = `s`.`PersonId`)))
